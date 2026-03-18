@@ -148,7 +148,7 @@ class RealSenseCameraProvider:
         self._align = rs.align(rs.stream.color)
 
         # warm-up: auto-exposure 안정화
-        for _ in range(10):
+        for _ in range(100):
             self._pipeline.wait_for_frames()
 
     def _cleanup_realsense_sdk(self) -> None:
